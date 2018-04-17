@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
+import {NavLink} from "react-router-dom";
 
 const styles = {
     root: {
@@ -25,9 +26,11 @@ function SimpleAppBar(props) {
                     <Typography variant="title" color="inherit" className={classes.flex}>
                         Co1ne
                     </Typography>
-                    <Button color="inherit">主页</Button>
-                    <Button color="inherit">视频</Button>
-                    <Button color="inherit">关于我</Button>
+                    <div>
+                        <Button><NavLink to="/" className="nav_button_class"> 主页</NavLink></Button>
+                        <Button color="inherit"><NavLink to="/videos" className="nav_button_class">视频</NavLink></Button>
+                        <Button color="inherit"><NavLink to="/about" className="nav_button_class">关于我</NavLink></Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         </div>

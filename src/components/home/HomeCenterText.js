@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "material-ui//Button";
-import {CHANGE_FIRST_LINE} from './actions/MainActions'
+import {Link} from "react-router-dom";
 
 export default class MainCenterText extends React.Component {
     firstLine;
@@ -9,14 +9,8 @@ export default class MainCenterText extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {firstLine: '英雄..呃...那个啥...', secondLine: '你好，世界', buttonText: '哎...认真点！'};
+        this.state = {firstLine: '敬请欣赏', secondLine: '无耻之徒 - 第七季', buttonText: '开始观看'};
         this.changeMainText = this.changeMainText.bind(this)
-    }
-
-    changeFirstLine(state, action) {
-        if (action == CHANGE_FIRST_LINE) {
-
-        }
     }
 
     changeMainText() {
@@ -28,9 +22,8 @@ export default class MainCenterText extends React.Component {
             <div>
                 <h3>{this.state.firstLine}</h3>
                 <h3>{this.state.secondLine}</h3>
-                <Button id="main-center-button" variant="raised" color="secondary"
-                        onClick={this.changeMainText}>
-                    {this.state.buttonText}
+                <Button id="main-center-button" variant="raised" color="secondary">
+                    <Link to="/videos" className="nav_button_white">{this.state.buttonText}</Link>
                 </Button>
             </div>
         )
